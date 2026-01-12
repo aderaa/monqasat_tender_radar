@@ -1,0 +1,68 @@
+{
+  "DBO - Business Process Services (BPS)": [
+    "Business Process Services (BPS) / BPO and operations support: outsourced back-office processing, transaction processing, data capture, document processing, workflow-based operations, SLA/KPI-driven delivery, and continuous improvement for government and enterprise.",
+    "خدمات عمليات الأعمال (BPS/BPO): إسناد وتشغيل عمليات الأعمال الخلفية، معالجة المعاملات، إدخال/تدقيق البيانات، معالجة المستندات، تشغيل قائم على سير العمل، التزام بمؤشرات الأداء واتفاقيات مستوى الخدمة، والتحسين المستمر للجهات الحكومية والشركات.",
+    "Common tender phrasing: business process services, BPS, BPO, back office operations, transaction processing, data entry, document processing, digitization operations, shared services, operations outsourcing, SLA, KPI, process re-engineering.",
+    "عبارات شائعة في المناقصات: خدمات عمليات الأعمال، BPS، BPO، تشغيل خلفي، معالجة معاملات، إدخال بيانات، معالجة مستندات، تشغيل الرقمنة، مراكز خدمات مشتركة، إسناد وتشغيل، SLA، KPI، إعادة هندسة العمليات."
+  ],
+  "DBO - Contact Centre (CC)": [
+    "Contact Center operations and solutions: inbound/outbound, omnichannel support (voice, email, chat, social), IVR, CRM/ticketing integration, workforce management (WFM), quality monitoring, training, and 24/7 service delivery.",
+    "تشغيل وحلول مراكز الاتصال: استقبال وإجراء مكالمات، دعم متعدد القنوات (هاتف/بريد/محادثة/اجتماعي)، IVR، تكامل مع CRM/نظام التذاكر، إدارة القوى العاملة والورديات، مراقبة الجودة، التدريب، وخدمة على مدار الساعة.",
+    "Common tender phrasing: contact center, call center, customer care, enquiry management, IVR, omnichannel, CRM integration, ticketing, WFM, QA monitoring, COPC, SLA, KPIs.",
+    "عبارات شائعة في المناقصات: مركز اتصال، كول سنتر، خدمة عملاء، إدارة الاستفسارات، IVR، قنوات متعددة، تكامل CRM، نظام تذاكر، إدارة ورديات، مراقبة جودة، COPC، SLA، مؤشرات أداء."
+  ],
+  "DS - Application Development & Modernization (ADM)": [
+    "Application Development & Modernization: custom application development, portals and e-services, mobile and web apps, API/backend integration, legacy modernization, DevOps/CI-CD, testing/QA, and application lifecycle support.",
+    "تطوير وتحديث التطبيقات (ADM): تطوير تطبيقات مخصصة، بوابات وخدمات إلكترونية، تطبيقات ويب وجوال، تكامل عبر واجهات API، تحديث الأنظمة القديمة، DevOps و CI/CD، اختبارات وضمان جودة، ودعم دورة حياة التطبيق.",
+    "Common tender phrasing: application development, custom development, e-services, portals, web application, mobile app, modernization, legacy migration, DevOps, CI/CD, QA testing, API integration, microservices.",
+    "عبارات شائعة في المناقصات: تطوير تطبيقات، تطوير مخصص، خدمات إلكترونية، بوابات، تطبيق ويب، تطبيق جوال، تحديث/تطوير أنظمة قائمة، ترحيل، DevOps، CI/CD، اختبارات جودة، تكامل API، مايكروسيرفس."
+  ],
+  "DS - Enterprise Applications Services (EAS)": [
+    "Enterprise Applications Services: implementation, integration and support for enterprise systems such as ERP/CRM/HCM/EPM, including upgrades, managed application services, reporting, and process alignment.",
+    "خدمات التطبيقات المؤسسية (EAS): تنفيذ وتكامل ودعم الأنظمة المؤسسية مثل ERP/CRM/HCM/EPM، بما يشمل الترقيات، خدمات إدارة التطبيقات، التقارير، ومواءمة العمليات.",
+    "Common tender phrasing: enterprise applications, ERP, CRM, HCM, EPM, application management, AMS, system integration, upgrade, support & maintenance, enterprise reporting, digital workplace.",
+    "عبارات شائعة في المناقصات: تطبيقات مؤسسية، ERP، CRM، HCM، EPM، إدارة تطبيقات، AMS، تكامل أنظمة، ترقية، دعم وصيانة، تقارير مؤسسية، بيئة عمل رقمية."
+  ],
+  "DS - Data / AI and IoT": [
+    "Data & AI and IoT services: data modernization, BI/analytics, AI implementation, predictive models, intelligent automation, data platforms, data governance, and IoT/connected solutions.",
+    "خدمات البيانات والذكاء الاصطناعي وإنترنت الأشياء: تحديث البيانات، ذكاء الأعمال والتحليلات، تطبيقات الذكاء الاصطناعي، نماذج تنبؤية، أتمتة ذكية، منصات بيانات، حوكمة البيانات، وحلول إنترنت الأشياء.",
+    "Common tender phrasing: data modernization, data platform, analytics, BI, big data, data lake/warehouse, AI/ML, NLP, RPA, intelligent automation, IoT platform, sensors, dashboards, cloud analytics.",
+    "عبارات شائعة في المناقصات: تحديث بيانات، منصة بيانات، تحليلات، BI، بيانات ضخمة، بحيرة/مستودع بيانات، AI/ML، NLP، RPA، أتمتة ذكية، منصة IoT، حساسات، لوحات مؤشرات، تحليلات سحابية."
+  ],
+  "DS - Strategic Programs - Tawasol (Citizen/Customer Engagement)": [
+    "Strategic citizen/customer engagement programs (e.g., Tawasol): central request management, customer/citizen service journeys, case/request tracking, CRM & workflow, omnichannel engagement, and service analytics for government programs.",
+    "برامج استراتيجية للتواصل وخدمة المستفيد (مثل تواصل): إدارة مركزية للطلبات، تصميم رحلات خدمة المستفيد، تتبع الطلبات/الحالات، CRM وسير عمل، تواصل متعدد القنوات، وتحليلات الخدمة لبرامج حكومية.",
+    "Common tender phrasing: citizen engagement, customer experience, CRM, case management, request tracking, service requests, complaint management, omnichannel, government customer care, service dashboard, workflow automation.",
+    "عبارات شائعة في المناقصات: تجربة مستفيد، تواصل مع الجمهور، CRM، إدارة حالات، تتبع طلبات، طلبات خدمة، إدارة شكاوى، قنوات متعددة، خدمة عملاء حكومية، لوحات خدمة، أتمتة إجراءات."
+  ],
+  "DS - Strategic Programs - Customs (eCustoms / Single Window)": [
+    "Customs digitization and single-window programs: end-to-end eCustoms solutions, customs process automation, integrated single window, stakeholder portals, risk/inspection workflow, integrations with government and trade partners, and 24/7 operations/support.",
+    "برامج الجمارك والنافذة الواحدة: حلول eCustoms متكاملة، أتمتة إجراءات الجمارك، نافذة واحدة للتجارة، بوابات للمستفيدين، سير عمل المخاطر والتفتيش، التكامل مع الجهات الحكومية وشركاء التجارة، وتشغيل/دعم 24/7.",
+    "Common tender phrasing: eCustoms, customs single window, trade facilitation, clearance, manifests, declarations, risk management, inspection, integration with ports/airports, WCO/WTO compliance, customs systems operations.",
+    "عبارات شائعة في المناقصات: eCustoms، نافذة واحدة للجمارك/التجارة، تسهيل التجارة، تخليص، بيانات شحن/Manifest، إقرارات، إدارة مخاطر، تفتيش، تكامل مع الموانئ/المطارات، التوافق مع WCO/WTO، تشغيل أنظمة الجمارك."
+  ],
+  "CIS - Cloud & Infrastructure Services (CIS)": [
+    "Cloud & Infrastructure Services: cloud adoption and migration (e.g., Azure), infrastructure design and deployment, data center/network services, ITSM/service desk, monitoring, managed services, and operational support.",
+    "خدمات السحابة والبنية التحتية: تبني وترحيل السحابة (مثل Azure)، تصميم وتنفيذ البنية التحتية، خدمات مراكز البيانات والشبكات، ITSM/خدمة مكتب الدعم، المراقبة، الخدمات المُدارة، والدعم التشغيلي.",
+    "Common tender phrasing: managed services, IT infrastructure, service desk, ITSM, NOC, monitoring, cloud migration, Azure CSP, data center, network, virtualization, backup & DR, infrastructure operations.",
+    "عبارات شائعة في المناقصات: خدمات مُدارة، بنية تحتية لتقنية المعلومات، Service Desk، ITSM، مركز عمليات شبكات NOC، مراقبة، ترحيل سحابي، Azure CSP، مركز بيانات، شبكات، افتراضية، نسخ احتياطي وتعافي كوارث، تشغيل البنية التحتية."
+  ],
+  "CIS - Cybersecurity": [
+    "Cybersecurity services: managed security services, SOC/EDR, security monitoring, DDoS protection, firewall/endpoint management, vulnerability management, penetration testing, threat intelligence, and incident response.",
+    "خدمات الأمن السيبراني: خدمات أمن مُدارة، SOC/EDR، مراقبة أمنية، حماية DDoS، إدارة الجدران النارية ونقاط النهاية، إدارة الثغرات، اختبارات اختراق، استخبارات تهديدات، واستجابة للحوادث.",
+    "Common tender phrasing: cybersecurity, information security, managed security services, SOC, SIEM, EDR, DDoS, threat hunting, incident response, penetration testing, vulnerability assessment, security monitoring, compliance.",
+    "عبارات شائعة في المناقصات: أمن سيبراني، أمن معلومات، خدمات أمن مُدارة، مركز عمليات أمن SOC، SIEM، EDR، DDoS، صيد تهديدات، استجابة للحوادث، اختبار اختراق، تقييم ثغرات، مراقبة أمنية، امتثال."
+  ],
+  "Cross-Functional - Digitization & eRecord Management (ECM/DMS)": [
+    "Digitization & eRecord management: document scanning and digitization, e-archiving, ECM/DMS implementation, metadata and indexing, OCR/capture, records lifecycle, and integration with business applications and e-services.",
+    "الرقمنة وإدارة السجلات الإلكترونية: مسح ضوئي ورقمنة المستندات، أرشفة إلكترونية، تنفيذ ECM/DMS، فهرسة وميتا داتا، OCR واستخلاص، دورة حياة السجلات، والتكامل مع التطبيقات والخدمات الإلكترونية.",
+    "Common tender phrasing: digitization, scanning, e-archive, ECM, DMS, document management, records management, OCR, capture, indexing, eRecord, document repository, workflow.",
+    "عبارات شائعة في المناقصات: رقمنة، مسح ضوئي، أرشفة إلكترونية، ECM، DMS، إدارة مستندات، إدارة سجلات، OCR، التقاط بيانات، فهرسة، سجل إلكتروني، مستودع مستندات، سير عمل."
+  ],
+  "Cross-Functional - Enterprise Architecture (EA) & Governance": [
+    "Enterprise Architecture services and EA Office operation: capability mapping, target architecture, standards, governance, and EA tool implementation/operation (e.g., OrbusInfinity cloud EA or iServer on-prem).",
+    "خدمات معمارية المؤسسة وتشغيل مكتب EA: خرائط القدرات، المعمارية المستهدفة، المعايير، الحوكمة، وتنفيذ/تشغيل أدوات EA (مثل OrbusInfinity السحابي أو iServer داخل الجهة).",
+    "Common tender phrasing: enterprise architecture, EA office, capability map, ArchiMate, TOGAF, EA repository, architecture governance, application portfolio, target architecture, standards & patterns.",
+    "عبارات شائعة في المناقصات: معمارية المؤسسة، مكتب EA، خريطة قدرات، ArchiMate، TOGAF، مستودع EA، حوكمة المعمارية، حصر التطبيقات، معمارية مستهدفة، معايير وأنماط."
+  ]
+}

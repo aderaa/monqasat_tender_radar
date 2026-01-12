@@ -1,0 +1,62 @@
+[
+  {
+    "activity_code": "631100",
+    "activity_name": "تجهيز البيانات واستضافة المواقع على الشبكة وما يتصل بذلك من أنشطة",
+    "activity_name_english": "Creating an infrastructure for web-hosting, data processing services, and other related activities"
+  },
+  {
+    "activity_code": "821901",
+    "activity_name": "أنشطة أعمال الطباعة والسكرتارية",
+    "activity_name_english": "Typing and secretarial support services"
+  },
+  {
+    "activity_code": "821902",
+    "activity_name": "أنشطة النسخ والتصوير",
+    "activity_name_english": "Duplicating and photocopying activities"
+  },
+  {
+    "activity_code": "821909",
+    "activity_name": "أعمال نسخ أخرى بدون تقديم خدمات الطباعة ولايشمل هذا الفرع ما يلي : الوثائق المطبوعة (طباعة الوثائق بطريقة أوفست أو الطباعة السريعة انظر الفئة 1811 خدمات تسجيل المراسلات بواسطة الآلات الاختزالية الصوتية كما في تقارير المحاكم انظر الفئة 8219 خدمات التسجيل بواسطة الآلات الاختزالية الصوتية انظر الفئة 8299",
+    "activity_name_english": "Other document copying services without also providing printing services This class does not include: printing of documents (offset printing, quick printing etc.), see 1811 specialized stenotype services such as court reporting, see 8299 public stenography services, see 8299"
+  },
+  {
+    "activity_code": "910100",
+    "activity_name": "المكتبات والمحفوظات تشمل هذه الفئة على أنشطة التوثيق والمعلومات في المكتبات بكل أنواعها ...",
+    "activity_name_english": "Libraries and archives"
+  },
+  {
+    "activity_code": "783000",
+    "activity_name": "تقديم موارد بشرية أخرى ولايشمل هذا الفرع ما يلي ...",
+    "activity_name_english": "Other human resources provision (i.e. provision of human resources on a long-term or permanent basis) ..."
+  },
+  {
+    "activity_code": "781002",
+    "activity_name": "أنشطة البحث عن موظفين للوظائف سواء بالتوجيه أو بالاختبارات",
+    "activity_name_english": "Search for employees for jobs either by directions or tests"
+  },
+  {
+    "activity_code": "620200",
+    "activity_name": "أنشطة الخبرة الاستشارية الحاسوبية وإدارة المرافق الحاسوبية",
+    "activity_name_english": "Computer consultancy and computer facilities management activities"
+  },
+  {
+    "activity_code": "620900",
+    "activity_name": "أنشطة خدمات تكنولوجيا المعلومات والحاسوب الأخرى",
+    "activity_name_english": "Other information technology and computer service activities"
+  },
+  {
+    "activity_code": "702010",
+    "activity_name": "مكاتب الاستشارات الادارية العامة وتشمل العلاقات العامة والاتصال وإدارة الاجتماعات وغيرها",
+    "activity_name_english": "General administrative consulting offices include public relations, communication, meeting management, and others"
+  },
+  {
+    "activity_code": "702090",
+    "activity_name": "أنشطة أخرى من المشورة والمساعدة للشركات والخدمات العامة في التخطيط والتنظيم والكفاءة والرقابة وإدارة المعلومات وما إلى ذلك.",
+    "activity_name_english": "Other consulting offices in business, administrative services, planning and administrative information"
+  },
+  {
+    "activity_code": "620103",
+    "activity_name": "صيانة برمجيات وتصميم صفحات المواقع",
+    "activity_name_english": "Software maintenance and website page design"
+  }
+]
