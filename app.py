@@ -636,7 +636,16 @@ def parse_details_html(html: str) -> TenderDetails:
 # -----------------------------
 async def fetch_html_playwright(url: str, timeout_ms: int = 60000) -> str:
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=[
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
+                "--disable-setuid-sandbox",
+                "--no-zygote",
+            ],
+        )
         context = await browser.new_context()
         page = await context.new_page()
 
