@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+export PLAYWRIGHT_BROWSERS_PATH="/mount/src/monqasat_tender_radar/.playwright-browsers"
 python -m playwright install --with-deps chromium
