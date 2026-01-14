@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urljoin
 from io import BytesIO
-
+import hashlib
 import streamlit as st
 import streamlit.components.v1 as components
 from bs4 import BeautifulSoup
@@ -641,41 +641,23 @@ async def fetch_html_playwright(url: str, timeout_ms: int = 60000) -> str:
             args=[
                 "--no-sandbox",
                 "--disable-dev-shm-usage",
-                "--disable-gpu",
-                "--disable-setuid-sandbox",
-                "--no-zygote",
             ],
         )
-        context = await browser.new_context()
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+        )
         page = await context.new_page()
 
         await page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
-        # Best-effort waits: some details (incl. Activities list) render after JS
+
+        # ✅ wait for tender items to appear (very important on Streamlit Cloud)
         try:
-            await page.wait_for_load_state("networkidle", timeout=15000)
+            await page.wait_for_selector('a[href*="TenderDetails"]', timeout=timeout_ms)
         except Exception:
+            # keep going (we’ll return whatever HTML we got)
             pass
 
-        # Try to wait for the activities table headers (if present)
-        for sel in [
-            'th:has-text("Activity code")',
-            'h2:has-text("Activities list")',
-            'table:has(th:has-text("Activity code"))',
-        ]:
-            try:
-                await page.wait_for_selector(sel, timeout=8000)
-                break
-            except Exception:
-                pass
-
-        if "TenderDetails" in url:
-            await page.wait_for_selector("table.custom--table tbody tr", timeout=timeout_ms)
-        else:
-            await page.wait_for_selector("div.row.custom-cards", timeout=timeout_ms)
-
-        await page.wait_for_timeout(300)
         html = await page.content()
-
         await context.close()
         await browser.close()
         return html
@@ -1160,27 +1142,80 @@ async def run_pipeline_pages(
 ) -> List[Dict[str, Any]]:
 
     all_cards: List[TenderCard] = []
+    seen_keys: set[str] = set()
+
+    empty_streak = 0
 
     for p in range(start_page, start_page + max_pages):
         landing_url = LANDING_URL_TEMPLATE.format(page=p)
-        landing_html = await fetch_html_playwright(landing_url)
+
+        landing_html = await fetch_html_playwright(landing_url, timeout_ms=60000)
         cards = parse_landing_html(landing_html)
 
+        # retry once with longer timeout
         if not cards:
-            break  # stop when a page is empty
+            landing_html = await fetch_html_playwright(landing_url, timeout_ms=120000)
+            cards = parse_landing_html(landing_html)
 
-        all_cards.extend(cards)
+        if not cards:
+            empty_streak += 1
+            if empty_streak >= 3:
+                break
+            continue
+        else:
+            empty_streak = 0
+
+        # ✅ DEDUP per-page + across pages (by details_url primarily)
+        for c in cards:
+            # Prefer details_url as the true unique key
+            key = (getattr(c, "details_url", None) or "").strip()
+
+            # Fallback key if details_url missing for any reason
+            if not key:
+                tn = (getattr(c, "tender_no", None) or "").strip()
+                title = (getattr(c, "tender_name", None) or getattr(c, "name", None) or getattr(c, "title", None) or "").strip()
+                key = f"{tn}||{title}".strip()
+
+            # If still empty, skip (should not happen, but safe)
+            if not key:
+                continue
+
+            if key in seen_keys:
+                continue
+
+            seen_keys.add(key)
+            all_cards.append(c)
 
         if max_tenders_total > 0 and len(all_cards) >= max_tenders_total:
             all_cards = all_cards[:max_tenders_total]
             break
 
-    details_html_map = await fetch_many_details([c.details_url for c in all_cards], concurrency=concurrency)
-
-    results = []
+    # ✅ Safety: final dedup again (keeps order)
+    uniq_cards: List[TenderCard] = []
+    seen2: set[str] = set()
     for c in all_cards:
-        raw = details_html_map.get(c.details_url, "")
-        details: Optional[TenderDetails] = None
+        key = (getattr(c, "details_url", None) or "").strip()
+        if not key:
+            tn = (getattr(c, "tender_no", None) or "").strip()
+            title = (getattr(c, "tender_name", None) or getattr(c, "name", None) or getattr(c, "title", None) or "").strip()
+            key = f"{tn}||{title}".strip()
+        if not key or key in seen2:
+            continue
+        seen2.add(key)
+        uniq_cards.append(c)
+
+    all_cards = uniq_cards
+
+    # Fetch details for unique URLs only
+    details_html_map = await fetch_many_details(
+        [c.details_url for c in all_cards if getattr(c, "details_url", None)],
+        concurrency=concurrency
+    )
+
+    results: List[Dict[str, Any]] = []
+    for c in all_cards:
+        raw = details_html_map.get(c.details_url, "") if getattr(c, "details_url", None) else ""
+        details = None
         if raw and not raw.startswith("__ERROR__"):
             try:
                 details = parse_details_html(raw)
@@ -1193,6 +1228,7 @@ async def run_pipeline_pages(
         })
 
     return results
+
 
 
 # -----------------------------
@@ -1497,12 +1533,16 @@ if run_btn:
         interest_vecs = build_interest_vectors_cached(st.session_state["interests_text"])
 
     with st.spinner("Scraping Monqasat and loading tender details..."):
+        # Decide how many pages to scan
+        # - If user checks All Pages: start from page 1 for N pages
+        # - Otherwise: start from selected page for N pages (NOT just 1)
         start_page = 1 if all_pages else int(page)
+        pages_to_scan = int(max_pages)  # always respect the UI number
 
         raw_items = run_async(
             run_pipeline_pages(
                 start_page=start_page,
-                max_pages=int(max_pages) if all_pages else 1,
+                max_pages=pages_to_scan,
                 max_tenders_total=int(max_tenders),
                 concurrency=int(concurrency),
             )
