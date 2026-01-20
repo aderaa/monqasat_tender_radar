@@ -1606,6 +1606,27 @@ if run_btn:
             isic_matched_codes = isic_res.get("matched_codes") or []
             isic_matched_items = isic_res.get("matched_items") or []
 
+            # --- FIX: If ISIC match exists, do NOT keep label/score as Irrelevant just because embedding gated out ---
+            if isic_match_count > 0:
+                # Always expose ISIC info in debug
+                debug = dict(debug or {})
+                debug["isic_match_count"] = isic_match_count
+                debug["isic_matched_codes"] = list(isic_matched_codes)
+
+                # If embedding score is 0 (gated), override the displayed score/label to be relevant
+                if int(score or 0) <= 0:
+                    # Treat ISIC match as a strong relevance signal
+                    # 1 match -> 70, 2 -> 80, 3 -> 90, 4+ -> 100
+                    score = min(100, 70 + 10 * (max(0, isic_match_count - 1)))
+                    if score >= 70:
+                        debug["label"] = "Relevant (High)"
+                    elif score >= 40:
+                        debug["label"] = "Relevant (Medium)"
+                    else:
+                        debug["label"] = "Relevant (Low)"
+
+                    explanation = f"{explanation} | ISIC match ({isic_match_count}) => override to {debug['label']} (score={score})"
+
             overall_relevant = (int(score or 0) > 0) or (isic_match_count > 0)
 
             embedding_match = (int(score or 0) > 0)
